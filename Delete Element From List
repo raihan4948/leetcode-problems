@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, delete_element, found = 0;
+
+    scanf("%d", &N);
+
+    int elements[N];
+
+    for (i = 0; i < N; i++) {
+        scanf("%d", &elements[i]);
+    }
+
+    scanf("%d", &delete_element);
+
+    for (i = 0; i < N; i++) {
+        if (elements[i] == delete_element) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found) {
+        for (i; i < N - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
+        N--;
+    }
+
+    for (i = 0; i < N; i++) {
+        printf("%d ", elements[i]);
+    }
+
+    return 0;
+}
